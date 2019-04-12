@@ -1,0 +1,44 @@
+          <!-- Nested Row within Card Body -->
+          <div class="row open-book" >
+            <div  [@simpleFadeAnimation]=currentState class="col-lg-6 d-none d-lg-block" style="background-position: center; background-repeat: no-repeat;" [style.background-image]="getBackground(books[index].urlImage)">
+
+            </div >
+            <div class="col-lg-6" [@simpleFadeAnimation]=currentState>
+              <div class="p-5">
+                <div class="text-center">
+                  <h1 class="h4 text-gray-900 mb-4">{{books[index].name}}</h1>
+                </div>
+                <hr>
+                <div class="text-justify" >
+                    <span class=" text-gray-900">Description:</span> {{books[index].description}}
+                  <br>
+                  <br>
+                  <span class=" text-gray-900">Publisher: </span> {{books[index].publisher}}
+                  <br>
+                  <span class=" text-gray-900">Author: </span> {{books[index].author}}
+                </div>
+                <hr>
+                <div style="display:flex; justify-content: space-between">
+                  <button style="margin-top:10px" [disabled]="!hasPrevious()" class="btn btn-primary btn-circle" (click)="previous()" >
+                    <span class="icon text-white-50">
+                      <i class="fas fa-arrow-left"></i>
+                    </span>
+                  </button>
+                  <div style=" color: #3d3d3d">
+                    <star-rating [disabled]="books[index].iDontRead" labelText="Evaluation" speed="slow" [starType]="'svg'" [rating]="books[index].evaluation" (starClickChange)="onClick($event)"></star-rating>
+                    <div>
+                        <input type="checkbox" id="filled-in-box" checked="checked" [(ngModel)]="books[index].iDontRead"/>
+                        <label style="margin-left: 10px" for="filled-in-box">I Don't Read :(</label>
+                    </div>
+                  </div>
+                  <button [disabled]="!hasNext()" class="btn btn-primary btn-circle" (click)="next()" style="margin-top:10px">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-arrow-right"></i>
+                    </span>
+                  </button>
+                </div>
+                <hr>
+                <button *ngIf="!hasNext()" style="margin-top:20px" class="btn btn-primary btn-user btn-block animated--fade-in" (click)="finish()" >Finish</button>
+              </div>
+            </div>
+          </div>

@@ -1,0 +1,10 @@
+.bg-welcome-image {
+    background: url("https://ebookfriendly.com/wp-content/uploads/2013/06/Best-quotes-about-libraries-Albert-Einstein-540x823.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+.alert{
+  font-size: 13px;
+  color: red;
+}

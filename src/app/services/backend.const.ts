@@ -1,0 +1,1 @@
+export const HTTP_API: string = "http://localhost:8083";
