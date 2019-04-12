@@ -1,1 +1,1 @@
-export const HTTP_API: string = "http://localhost:8083";
+export const HTTP_API: string = "https://bookritics-backend.herokuapp.com";
